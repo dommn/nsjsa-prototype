@@ -10,10 +10,6 @@
 
 {% block content %}
 
-  {% set currentlyworking = false %}
-  {% set jservice = false %}
-  {% set resultjservice = "no" %}
-  {% set startDateItems = todaysDate.original | moment %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -32,139 +28,11 @@
               text: "Start date"
             },
             value: {
-              text: "22/07/2020"
+              text: "11/11/2020"
             },
             actions: {
               items: [
                {
-                  href: "#",
-                  text: "Change"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Were you available for work from 22 July 2020?"
-            },
-            value: {
-              text: "Yes | No"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Were you searching for work from 22 July 2020?"
-            },
-            value: {
-              text: "Yes | No"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change"
-                }
-              ]
-            }
-          },          
-          {
-            key: {
-              text: "Why did you not apply before today?"
-            },
-            value: {
-              text: "{ENTERED DATA}"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "In paid work since 22 July 2020?"
-            },
-            value: {
-              text: "Yes | No"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Unable to work because of illness since 22 July 2020?"
-            },
-            value: {
-              text: "Yes, {DD/MM/YYYY} to {DD/MM/YYYY} | No"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Travelled outside of England, Wales or Scotland since 22 July 2020?"
-            },
-            value: {
-              text: "Yes, {DD/MM/YYYY} to {DD/MM/YYYY} | No"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Had been in full-time education since 22 July 2020?"
-            },
-            value: {
-              text: "Yes | No"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Had asked for advice about applying since 22 July 2020?"
-            },
-            value: {
-              text: "Yes, {ENTERED DATA} | No"
-            },
-            actions: {
-              items: [
-                {
                   href: "#",
                   text: "Change"
                 }
