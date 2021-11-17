@@ -1,0 +1,558 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DWP - Jobseeker&rsquo;s Allowance
+{% endblock %}
+
+{% block beforeContent %}
+  {# Remove the "< Back" button from this instance of the template #}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+      <!-- APPLICATION START DATE -->
+      <h2 class="govuk-heading-l">Application start date</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Start date"
+            },
+            value: {
+              text: "11/11/2021"
+            },
+            actions: {
+              items: [
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <!-- PERSONAL DETAILS -->
+      <h2 class="govuk-heading-l">Personal details</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National Insurance number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['national-insurance-number'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['title'] ['first-name'] ['last-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['dob'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            6 Turnberry, Whitley Bay, NE16 7AX
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do you want to add a different address for your post?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Telephone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['contact-telephone-number'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div><div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['contact-email-address'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "National Insurance number"
+            },
+            value: {
+              text: "QQ 12 34 56 C"
+            },
+            actions: {
+              items: [
+                {
+                  href: "3-details",
+                  text: "Change"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Alex Phillips"
+            },
+            actions: {
+              items: [
+                {
+                  href: "3-details/about-you",
+                  text: "Change"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              html: "27 11 1972"
+            },
+            actions: {
+              items: [
+                {
+                  href: "3-details/dob",
+                  text: "Change"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Home address"
+            },
+            value: {
+              html: '6 Turnberry, Whitley Bay, NE16 7AX'
+            },
+            actions: {
+              items: [
+                {
+                  href: "3-details/address",
+                  text: "Change"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Do you want to add a different address for your post?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "3-details/address-is-it-postal",
+                  text: "Change"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Telephone number"
+            },
+            value: {
+              text: "01234984123"
+            },
+            actions: {
+              items: [
+                {
+                  href: "3-details/contact-phone",
+                  text: "Change"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Email address"
+            },
+            value: {
+              html: 'email@example.com'
+            },
+            actions: {
+              items: [
+                {
+                  href: "3-details/contact-email",
+                  text: "Change"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <!-- BANK DETAILS -->
+      <h2 class="govuk-heading-l">Bank details</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Bank details"
+            },
+            value: {
+              html: "<strong>Account holder:</strong> John Smith<br>
+                <strong>Sort code:</strong> 15-00-11<br>
+                <strong>Account number:</strong> 1234567"
+            },
+            actions: {
+              items: [
+                {
+                  href: "3-details/bank-account",
+                  text: "Change"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <!-- OTHER BENEFITS -->
+      <h2 class="govuk-heading-l">Other benefits</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Are you waiting to hear about any other benefits?"
+            },
+            value: {
+              html: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "4-other-benefits",
+                  text: "Change"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <!-- JURY SERVICE -->
+      <h2 class="govuk-heading-l">Jury service</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Have you been on jury service in the last 12 weeks?"
+            },
+            value: {
+              html: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "5-jury-service",
+                  text: "Change"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <!-- CURRENT EMPLOYMENT -->
+      <h2 class="govuk-heading-l">Current employment</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Are you in any form of work at the moment?"
+            },
+            value: {
+              html: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "6-current-employment",
+                  text: "Change"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Paid or voluntary?"
+            },
+            value: {
+              html: "Paid"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "How often are you paid?"
+            },
+            value: {
+              html: "Monthly"
+            },
+            actions: {
+              items: [
+                {
+                  href: "6-current-employment",
+                  text: "Change"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "What is your current employer's name?"
+            },
+            value: {
+              html: "Tesco"
+            },
+            actions: {
+              items: [
+                {
+                  href: "6-current-employment",
+                  text: "Change"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "What is your employer's address?"
+            },
+            value: {
+              html: "138 High Street, Whitley Bay, NE12 1AN"
+            },
+            actions: {
+              items: [
+                {
+                  href: "6-current-employment",
+                  text: "Change"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "How many hours do you normally work?"
+            },
+            value: {
+              html: "10"
+            },
+            actions: {
+              items: [
+                {
+                  href: "6-current-employment",
+                  text: "Change"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Are you self employed?"
+            },
+            value: {
+              html: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "6-current-employment",
+                  text: "Change"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <!-- PREVIOUS EMPLOYMENT -->
+      <h2 class="govuk-heading-l">Previous employment</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Have you had a job that ended in the last 6 months?"
+            },
+            value: {
+              html: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "8-abroad",
+                  text: "Change"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <!-- WORKING OR CLAIMING BENEFITS ABROAD -->
+      <h2 class="govuk-heading-l">Working or claiming benefit overseas</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Have you worked or claimed benefit outside the United Kingdom in last 4 years?"
+            },
+            value: {
+              html: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "8-abroad",
+                  text: "Change"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <!-- CURRENT PENSIONS -->
+      <h2 class="govuk-heading-l">Current pensions</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Are you getting money from a pension or annuity?"
+            },
+            value: {
+              html: "No"
+            },
+            actions: {
+              items: [
+                {
+                    href: "8-abroad",
+                    text: "Change"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <!-- EDUCATION AND TRAINING -->
+      <h2 class="govuk-heading-l">Education and training</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Have you been in education or training in the last 4 years?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "10-education",
+                  text: "Change"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "https://green-zone-prototype.herokuapp.com/dth/sign-in"
+      }) }}
+
+    {% endblock %}
